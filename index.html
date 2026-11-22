@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الدليل العملي لإعداد خطة بحث رسالة الماجستير | كيف تكتب خطة بحث رسالة الماجستير؟</title>
+    <meta name="description" content="دليل عملي تفاعلي لإعداد خطة بحث رسالة الماجستير من اختيار الفكرة إلى اعتماد الخطة البحثية">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="bg-gradient"></div>
+        <div class="bg-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Top Bar -->
+    <header class="top-bar">
+        <div class="top-bar-content">
+            <div class="brand">
+                <i class="ti ti-book-2"></i>
+                <span>الدليل العملي لإعداد خطة بحث رسالة الماجستير</span>
+            </div>
+            <div class="top-actions">
+                <button class="icon-btn" id="themeToggle" title="تبديل المظهر" aria-label="تبديل المظهر">
+                    <i class="ti ti-moon"></i>
+                </button>
+                <button class="icon-btn" id="fullscreenBtn" title="ملء الشاشة" aria-label="ملء الشاشة">
+                    <i class="ti ti-maximize"></i>
+                </button>
+                <button class="icon-btn" id="tocBtn" title="الفهرس" aria-label="الفهرس">
+                    <i class="ti ti-list"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Slide Counter -->
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">10</span>
+    </div>
+
+    <!-- Table of Contents Modal -->
+    <div class="modal" id="tocModal">
+        <div class="modal-backdrop" id="tocBackdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="ti ti-list-numbers"></i> فهرس الشرائح</h2>
+                <button class="modal-close" id="tocClose" aria-label="إغلاق">
+                    <i class="ti ti-x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ol class="toc-list" id="tocList"></ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slides Container -->
+    <main class="slides-container" id="slidesContainer">
+        <!-- Slide 1: Cover -->
+        <section class="slide active" data-slide="1">
+            <div class="slide-content cover-slide">
+                <div class="cover-illustration">
+                    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <!-- Books -->
+                        <rect x="50" y="220" width="80" height="100" rx="4" fill="url(#grad1)" opacity="0.9"/>
+                        <rect x="60" y="210" width="80" height="100" rx="4" fill="url(#grad2)" opacity="0.9"/>
+                        <rect x="70" y="200" width="80" height="100" rx="4" fill="url(#grad3)" opacity="0.95"/>
+                        <!-- Computer -->
+                        <rect x="200" y="180" width="120" height="80" rx="6" fill="url(#grad4)" opacity="0.9"/>
+                        <rect x="210" y="190" width="100" height="60" rx="3" fill="#0a0e27" opacity="0.8"/>
+                        <circle cx="260" cy="275" r="8" fill="url(#grad5)"/>
+                        <!-- Magnifier -->
+                        <circle cx="150" cy="150" r="30" fill="none" stroke="url(#grad6)" stroke-width="6" opacity="0.9"/>
+                        <line x1="170" y1="170" x2="190" y2="190" stroke="url(#grad6)" stroke-width="6" stroke-linecap="round"/>
+                        <!-- Light rays -->
+                        <path d="M 260 150 L 260 100" stroke="url(#grad7)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+                        <path d="M 260 150 L 290 110" stroke="url(#grad7)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+                        <path d="M 260 150 L 230 110" stroke="url(#grad7)" stroke-width="3" opacity="0.7" stroke-linecap="round"/>
+                        <!-- Mind map nodes -->
+                        <circle cx="320" cy="120" r="12" fill="url(#grad8)"/>
+                        <circle cx="350" cy="140" r="10" fill="url(#grad9)"/>
+                        <circle cx="340" cy="100" r="10" fill="url(#grad10)"/>
+                        <line x1="320" y1="120" x2="350" y2="140" stroke="rgba(255,215,0,0.6)" stroke-width="2"/>
+                        <line x1="320" y1="120" x2="340" y2="100" stroke="rgba(255,215,0,0.6)" stroke-width="2"/>
+                        <defs>
+                            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad7" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ff8c00;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#ff9a9e;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#fecfef;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad9" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#a18cd1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#fbc2eb;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="grad10" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#fad0c4;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#ffd1ff;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="cover-text">
+                    <h1 class="cover-title">كيف تكتب خطة بحث رسالة الماجستير؟</h1>
+                    <h2 class="cover-subtitle">الدليل العملي لإعداد خطة بحث رسالة الماجستير</h2>
+                    <p class="cover-subtitle-secondary">دليل عملي متكامل من اختيار الفكرة إلى اعتماد الخطة البحثية</p>
+                    <div class="cover-motto">
+                        <i class="ti ti-bulb"></i>
+                        <p>البحث العلمي الجيد يبدأ بسؤال واضح، ويتقدم بمنهجية دقيقة، وينتهي بإضافة معرفية ذات قيمة</p>
+                    </div>
+                    <div class="cover-footer">
+                        <span class="editable">اسم العرض / اسم الجهة</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 2: What is research plan -->
+        <section class="slide" data-slide="2">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-file-description"></i> ما خطة البحث العلمي؟ ولماذا نحتاج إليها؟</h2>
+                </div>
+                <div class="slide-body two-column">
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-info-circle"></i> مفهوم خطة البحث</h3>
+                            <p>خطة البحث العلمي هي وثيقة علمية منظمة تحدد المشكلة البحثية، والأهداف، والأسئلة، والمنهجية، والإجراءات اللازمة لتنفيذ الدراسة، وتمثل خارطة طريق واضحة للباحث.</p>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-star"></i> أهمية خطة البحث</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-route"></i> تحديد مسار البحث وأولوياته</li>
+                                <li><i class="ti ti-check"></i> إثبات وضوح المشكلة وقابليتها للدراسة</li>
+                                <li><i class="ti ti-settings"></i> اختيار المنهج والأدوات المناسبة</li>
+                                <li><i class="ti ti-clock"></i> تقدير الوقت والموارد اللازمة</li>
+                                <li><i class="ti ti-users"></i> تمكين المشرف واللجنة العلمية من تقييم جدوى الدراسة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="illustration-card glass-card">
+                            <h3>من الفكرة إلى خطة منظمة إلى بحث قابل للتنفيذ</h3>
+                            <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="50" cy="50" r="35" fill="url(#g1)" opacity="0.9"/>
+                                <text x="50" y="58" text-anchor="middle" fill="white" font-size="10" font-weight="bold">فكرة</text>
+                                <path d="M 85 50 L 120 50" stroke="url(#g2)" stroke-width="3" marker-end="url(#arrow)"/>
+                                <rect x="120" y="25" width="70" height="50" rx="8" fill="url(#g3)" opacity="0.9"/>
+                                <text x="155" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">خطة منظمة</text>
+                                <path d="M 190 50 L 225 50" stroke="url(#g2)" stroke-width="3" marker-end="url(#arrow)"/>
+                                <rect x="225" y="25" width="70" height="50" rx="8" fill="url(#g4)" opacity="0.9"/>
+                                <text x="260" y="55" text-anchor="middle" fill="white" font-size="9" font-weight="bold">بحث قابل للتنفيذ</text>
+                                <defs>
+                                    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="g3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="g4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" />
+                                    </linearGradient>
+                                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+                                        <path d="M0,0 L0,6 L9,3 z" fill="#4facfe" />
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 3: Topic selection -->
+        <section class="slide" data-slide="3">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-search"></i> اختيار موضوع البحث وصياغة العنوان</h2>
+                </div>
+                <div class="slide-body two-column">
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-checklist"></i> معايير اختيار موضوع مناسب</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-link"></i> الارتباط بالتخصص والاهتمامات العلمية</li>
+                                <li><i class="ti ti-chart-bar"></i> أهمية الموضوع وجدواه العلمية أو التطبيقية</li>
+                                <li><i class="ti ti-puzzle"></i> وجود فجوة بحثية يمكن دراستها</li>
+                                <li><i class="ti ti-database"></i> إمكانية الوصول إلى البيانات والمراجع</li>
+                                <li><i class="ti ti-calendar"></i> ملاءمة الموضوع للوقت والإمكانات المتاحة</li>
+                                <li><i class="ti ti-ruler"></i> وضوح نطاق الدراسة وحدودها</li>
+                            </ul>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-arrow-narrow-right"></i> من المجال الواسع إلى عنوان محدد</h3>
+                            <div class="narrowing-flow">
+                                <div class="flow-step">مجال عام واسع</div>
+                                <i class="ti ti-chevron-left"></i>
+                                <div class="flow-step">تضييق حسب الاهتمام</div>
+                                <i class="ti ti-chevron-left"></i>
+                                <div class="flow-step active">عنوان محدد وقابل للدراسة</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="example-card glass-card">
+                            <h3><i class="ti ti-bulb"></i> مثال توضيحي</h3>
+                            <div class="example-row bad">
+                                <span class="example-label">عنوان عام وغير محدد:</span>
+                                <p>«الذكاء الاصطناعي والتعليم»</p>
+                            </div>
+                            <div class="example-arrow"><i class="ti ti-arrow-down"></i></div>
+                            <div class="example-row good">
+                                <span class="example-label">عنوان أكثر تحديدًا:</span>
+                                <p>«اتجاهات أعضاء هيئة التدريس نحو استخدام أدوات الذكاء الاصطناعي التوليدي في التعليم الجامعي: دراسة ميدانية في جامعة محددة»</p>
+                            </div>
+                            <p class="example-note"><i class="ti ti-alert-circle"></i> المثال توضيحي، والعنوان النهائي يجب أن يعكس مشكلة بحث حقيقية قابلة للدراسة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 4: Problem and questions -->
+        <section class="slide" data-slide="4">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-question-mark"></i> مشكلة البحث وأسئلته</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="info-card glass-card">
+                        <h3><i class="ti ti-file-alert"></i> مفهوم مشكلة البحث</h3>
+                        <p>مشكلة البحث تمثل القضية أو الفجوة المعرفية التي تسعى الدراسة إلى فهمها أو تفسيرها أو معالجتها.</p>
+                    </div>
+                    <div class="grid-2">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-steps"></i> خطوات صياغة مشكلة البحث</h3>
+                            <ol class="numbered-list">
+                                <li>تقديم خلفية علمية موجزة عن الموضوع</li>
+                                <li>تحديد الظاهرة أو الفجوة البحثية</li>
+                                <li>دعم المشكلة بالأدبيات أو البيانات المتاحة</li>
+                                <li>توضيح أهمية دراستها</li>
+                                <li>صياغة السؤال الرئيسي والأسئلة الفرعية</li>
+                            </ol>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-diagram-2"></i> نموذج بصري لمشكلة البحث</h3>
+                            <div class="problem-model">
+                                <div class="model-item">خلفية المشكلة</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="model-item">الفجوة البحثية</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="model-item primary">السؤال الرئيسي</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="model-item">الأسئلة الفرعية</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="alert-card warning">
+                        <i class="ti ti-alert-triangle"></i>
+                        <p><strong>تنبيه مهم:</strong> يجب التمييز بين المشكلة البحثية والرأي الشخصي، وعدم تقديم ادعاءات عن وجود فجوة بحثية دون مراجعة الأدبيات.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 5: Objectives and importance -->
+        <section class="slide" data-slide="5">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-target"></i> أهداف البحث وأهميته</h2>
+                </div>
+                <div class="slide-body two-column">
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-flag"></i> أهداف البحث</h3>
+                            <p>يجب صياغة أهداف واضحة ومحددة وقابلة للتحقق، تبدأ بأفعال مناسبة:</p>
+                            <div class="tags-grid">
+                                <span class="tag">تحديد</span>
+                                <span class="tag">تحليل</span>
+                                <span class="tag">قياس</span>
+                                <span class="tag">تفسير</span>
+                                <span class="tag">مقارنة</span>
+                                <span class="tag">تقييم</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-award"></i> أهمية البحث</h3>
+                            <div class="importance-grid">
+                                <div class="importance-item">
+                                    <i class="ti ti-brain"></i>
+                                    <h4>الأهمية العلمية</h4>
+                                    <p>الإضافة المعرفية المتوقعة</p>
+                                </div>
+                                <div class="importance-item">
+                                    <i class="ti ti-tool"></i>
+                                    <h4>الأهمية التطبيقية</h4>
+                                    <p>الفائدة المحتملة للجهات أو الممارسين أو المجتمع</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-body">
+                    <div class="info-card glass-card">
+                        <h3><i class="ti ti-link"></i> ترابط الأسئلة بالأهداف</h3>
+                        <div class="link-diagram">
+                            <div class="link-box">السؤال الرئيسي / الأسئلة الفرعية</div>
+                            <i class="ti ti-arrows-right-left"></i>
+                            <div class="link-box">الأهداف العامة / الأهداف الخاصة</div>
+                        </div>
+                        <p class="example-note"><i class="ti ti-info-circle"></i> يجب أن يرتبط كل سؤال بحثي بهدف مناسب، ويُغطي جميع أسئلة البحث أهداف الدراسة</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Previous studies and theoretical framework -->
+        <section class="slide" data-slide="6">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-books"></i> الدراسات السابقة والإطار النظري</h2>
+                </div>
+                <div class="slide-body two-column">
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-search"></i> البحث عن الدراسات السابقة</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-database-search"></i> البحث في قواعد البيانات الأكاديمية الموثوقة</li>
+                                <li><i class="ti ti-key"></i> استخدام الكلمات المفتاحية والمصطلحات المناسبة</li>
+                                <li><i class="ti ti-filter"></i> اختيار الدراسات ذات الصلة المباشرة بالموضوع</li>
+                                <li><i class="ti ti-file-text"></i> الرجوع إلى المصادر الأصلية</li>
+                                <li><i class="ti ti-quote"></i> التوثيق وفق أسلوب الجامعة (مثل APA)</li>
+                            </ul>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-chart-dots"></i> تحليل ومقارنة الدراسات</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-equal"></i> أوجه الاتفاق بين الدراسات</li>
+                                <li><i class="ti ti-arrows-diff"></i> أوجه الاختلاف</li>
+                                <li><i class="ti ti-puzzle"></i> تحديد الفجوة البحثية</li>
+                                <li><i class="ti ti-brain"></i> قراءة نقدية وليس مجرد تلخيص</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-route"></i> مسار مراجعة الأدبيات</h3>
+                            <div class="path-flow">
+                                <div class="path-step">البحث عن المصادر</div>
+                                <i class="ti ti-chevron-down"></i>
+                                <div class="path-step">الفرز والاختيار</div>
+                                <i class="ti ti-chevron-down"></i>
+                                <div class="path-step">القراءة النقدية</div>
+                                <i class="ti ti-chevron-down"></i>
+                                <div class="path-step">المقارنة والتحليل</div>
+                                <i class="ti ti-chevron-down"></i>
+                                <div class="path-step active">تحديد الفجوة البحثية</div>
+                            </div>
+                        </div>
+                        <div class="alert-card danger">
+                            <i class="ti ti-ban"></i>
+                            <p><strong>تحذير:</strong> عدم اختلاق المراجع أو نتائج الدراسات، والرجوع دائمًا إلى المصادر الأصلية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 7: Methodology -->
+        <section class="slide" data-slide="7">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-test-pipe"></i> منهجية البحث وتصميم الدراسة</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="info-card glass-card">
+                        <h3><i class="ti ti-info-circle"></i> مبدأ أساسي</h3>
+                        <p>يختار الباحث منهج الدراسة بناءً على طبيعة المشكلة والأسئلة، وليس بناءً على تفضيل شخصي</p>
+                    </div>
+                    <div class="grid-3">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-chart-bar"></i> المناهج الشائعة</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-calculator"></i> المنهج الكمي</li>
+                                <li><i class="ti ti-messages"></i> المنهج النوعي</li>
+                                <li><i class="ti ti-arrows-shuffle"></i> المنهج المختلط</li>
+                                <li><i class="ti ti-file-description"></i> الوصفي / التجريبي وغيرها حسب التخصص</li>
+                            </ul>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-list-details"></i> العناصر الأساسية</h3>
+                            <ul class="icon-list compact">
+                                <li><i class="ti ti-users-group"></i> مجتمع الدراسة والعينة</li>
+                                <li><i class="ti ti-tools"></i> أدوات جمع البيانات</li>
+                                <li><i class="ti ti-play-card"></i> إجراءات تنفيذ الدراسة</li>
+                                <li><i class="ti ti-chart-line"></i> أساليب تحليل البيانات</li>
+                                <li><i class="ti ti-shield-check"></i> الصدق والثبات / معايير جودة البحث النوعي</li>
+                                <li><i class="ti ti-shield-lock"></i> الاعتبارات الأخلاقية وحماية المشاركين</li>
+                            </ul>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-flow"></i> مسار الاختيار</h3>
+                            <div class="choice-flow">
+                                <div class="choice-step">سؤال البحث</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="choice-step">طبيعة المشكلة</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="choice-step">المنهج المناسب</div>
+                                <i class="ti ti-arrow-down"></i>
+                                <div class="choice-step active">الأداة المناسبة</div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="example-note"><i class="ti ti-info-circle"></i> لا يوجد منهج واحد مناسب لجميع الدراسات؛ الاختيار يعتمد على طبيعة المشكلة وأسئلتها</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 8: Limits, hypotheses, definitions -->
+        <section class="slide" data-slide="8">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-border-all"></i> حدود البحث وفرضياته ومصطلحاته</h2>
+                </div>
+                <div class="slide-body two-column">
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-frame"></i> حدود البحث</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-file-text"></i> الحدود الموضوعية: ما يغطيه البحث من موضوع</li>
+                                <li><i class="ti ti-map-pin"></i> الحدود المكانية: مكان إجراء الدراسة</li>
+                                <li><i class="ti ti-calendar-time"></i> الحدود الزمانية: الفترة الزمنية للدراسة</li>
+                                <li><i class="ti ti-users"></i> الحدود البشرية: الفئة المستهدفة إن وجدت</li>
+                            </ul>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-test-pipe-2"></i> فرضيات البحث</h3>
+                            <p>تُستخدم عندما يتطلبها التصميم البحثي، خاصة في بعض الدراسات الكمية التجريبية أو الارتباطية.</p>
+                            <div class="alert-card info">
+                                <i class="ti ti-info-circle"></i>
+                                <p>الفرضيات ليست شرطًا موحدًا لكل الدراسات؛ فقد تكون الأسئلة البحثية كافية في الدراسات النوعية أو الاستكشافية</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-book-2"></i> التعريفات الاصطلاحية والإجرائية</h3>
+                            <p>تحوّل المفاهيم النظرية إلى عناصر قابلة للدراسة والقياس عمليا</p>
+                            <div class="definition-example">
+                                <div class="def-item">
+                                    <strong>التعريف الاصطلاحي:</strong> تعريف المفهوم في ضوء الأدبيات والنظريات
+                                </div>
+                                <div class="def-item">
+                                    <strong>التعريف الإجرائي:</strong> كيفية قياس أو تطبيق المفهوم في هذه الدراسة بالذات
+                                </div>
+                            </div>
+                        </div>
+                        <div class="illustration-card glass-card">
+                            <h3>كيف تحدد الحدود نطاق الدراسة</h3>
+                            <svg viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <ellipse cx="140" cy="100" rx="100" ry="60" fill="none" stroke="url(#g5)" stroke-width="3" opacity="0.6"/>
+                                <ellipse cx="140" cy="100" rx="70" ry="40" fill="url(#g6)" opacity="0.3"/>
+                                <text x="140" y="105" text-anchor="middle" fill="white" font-size="10" font-weight="bold">نطاق الدراسة</text>
+                                <circle cx="60" cy="60" r="15" fill="url(#g7)"/>
+                                <text x="60" y="65" text-anchor="middle" fill="white" font-size="8">موضوعي</text>
+                                <circle cx="220" cy="60" r="15" fill="url(#g8)"/>
+                                <text x="220" y="65" text-anchor="middle" fill="white" font-size="8">مكاني</text>
+                                <circle cx="60" cy="140" r="15" fill="url(#g9)"/>
+                                <text x="60" y="145" text-anchor="middle" fill="white" font-size="8">زمني</text>
+                                <circle cx="220" cy="140" r="15" fill="url(#g10)"/>
+                                <text x="220" y="145" text-anchor="middle" fill="white" font-size="8">بشري</text>
+                                <defs>
+                                    <linearGradient id="g5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                        <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                                    </linearGradient>
+                                    <linearGradient id="g7"><stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" /><stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" /></linearGradient>
+                                    <linearGradient id="g8"><stop offset="0%" style="stop-color:#43e97b;stop-opacity:1" /><stop offset="100%" style="stop-color:#38f9d7;stop-opacity:1" /></linearGradient>
+                                    <linearGradient id="g9"><stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" /><stop offset="100%" style="stop-color:#fee140;stop-opacity:1" /></linearGradient>
+                                    <linearGradient id="g10"><stop offset="0%" style="stop-color:#a18cd1;stop-opacity:1" /><stop offset="100%" style="stop-color:#fbc2eb;stop-opacity:1" /></linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 9: Timeline, references, structure -->
+        <section class="slide" data-slide="9">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-calendar-stats"></i> الجدول الزمني والمراجع والهيكل المقترح للرسالة</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="info-card glass-card">
+                        <h3><i class="ti ti-timeline"></i> جدول زمني افتراضي (٦ أشهر) - مثال قابل للتعديل</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker">١</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر الأول</h4>
+                                    <p>اعتماد الموضوع وإعداد الخطة</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">٢</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر الثاني</h4>
+                                    <p>استكمال مراجعة الأدبيات والإطار النظري</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">٣</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر الثالث</h4>
+                                    <p>إعداد أدوات الدراسة والحصول على الموافقات اللازمة</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">٤</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر الرابع</h4>
+                                    <p>جمع البيانات</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">٥</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر الخامس</h4>
+                                    <p>تحليل البيانات وتفسير النتائج</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-marker">٦</div>
+                                <div class="timeline-content">
+                                    <h4>الشهر السادس</h4>
+                                    <p>كتابة المسودة النهائية والمراجعة والتوثيق</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-file-text"></i> الهيكل المقترح للرسالة</h3>
+                            <ol class="numbered-list">
+                                <li>المقدمة</li>
+                                <li>الإطار النظري والدراسات السابقة</li>
+                                <li>منهجية البحث وإجراءاته</li>
+                                <li>تحليل البيانات ومناقشة النتائج</li>
+                                <li>الخاتمة والتوصيات والمقترحات</li>
+                                <li>المراجع وقائمة الملاحق</li>
+                            </ol>
+                        </div>
+                        <div class="info-card glass-card">
+                            <h3><i class="ti ti-books"></i> المراجع والتوثيق</h3>
+                            <ul class="icon-list">
+                                <li><i class="ti ti-check"></i> استخدام مراجع حديثة وموثوقة</li>
+                                <li><i class="ti ti-check"></i> توحيد أسلوب التوثيق حسب متطلبات الجامعة</li>
+                                <li><i class="ti ti-check"></i> التحقق من صحة بيانات كل مرجع</li>
+                                <li><i class="ti ti-check"></i> الرجوع إلى المصادر الأصلية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 10: Final review -->
+        <section class="slide" data-slide="10">
+            <div class="slide-content">
+                <div class="slide-header">
+                    <h2 class="slide-title"><i class="ti ti-clipboard-check"></i> المراجعة النهائية وقائمة التحقق</h2>
+                </div>
+                <div class="slide-body">
+                    <div class="info-card glass-card">
+                        <h3><i class="ti ti-list-check"></i> قائمة التحقق قبل تسليم خطة البحث</h3>
+                        <div class="checklist" id="checklist">
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="1">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">عنوان واضح ومحدد</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="2">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">مشكلة بحث مدعومة بالأدبيات</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="3">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">أسئلة وأهداف متسقة</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="4">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">أهمية علمية أو تطبيقية واضحة</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="5">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">دراسات سابقة موثوقة ومحللة نقديًا</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="6">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">منهجية متوافقة مع أسئلة البحث</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="7">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">أدوات وإجراءات مناسبة</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="8">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">حدود وتعريفات واضحة</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="9">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">جدول زمني واقعي</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="10">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">مراجع صحيحة ومتسقة في التوثيق</span>
+                            </label>
+                            <label class="checklist-item">
+                                <input type="checkbox" data-id="11">
+                                <span class="checkmark"></span>
+                                <span class="checklist-text">الالتزام بالأخلاقيات البحثية ومتطلبات الجامعة</span>
+                            </label>
+                        </div>
+                        <div class="checklist-progress">
+                            <span>التقدم:</span>
+                            <div class="checklist-bar">
+                                <div class="checklist-fill" id="checklistFill"></div>
+                            </div>
+                            <span id="checklistCount">٠ / ١١</span>
+                        </div>
+                    </div>
+                    <div class="conclusion-card glass-card">
+                        <h3><i class="ti ti-rocket"></i> خاتمة</h3>
+                        <p class="conclusion-text">«الخطة البحثية القوية ليست مجرد متطلب أكاديمي، بل خريطة طريق لإنتاج معرفة موثوقة وذات قيمة»</p>
+                        <p class="conclusion-note"><i class="ti ti-info-circle"></i> الاعتماد النهائي يخضع لمتطلبات الجامعة والمشرف واللجنة المختصة</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="restartBtn">
+                            <i class="ti ti-refresh"></i>
+                            العودة إلى البداية
+                        </button>
+                        <button class="action-btn" id="reviewAllBtn">
+                            <i class="ti ti-eye"></i>
+                            مراجعة جميع الشرائح
+                        </button>
+                        <button class="action-btn" id="printBtn">
+                            <i class="ti ti-printer"></i>
+                            طباعة قائمة التحقق
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <button class="nav-btn prev-btn" id="prevBtn" aria-label="الشريحة السابقة">
+            <i class="ti ti-chevron-right"></i>
+            <span>السابق</span>
+        </button>
+        <button class="nav-btn next-btn" id="nextBtn" aria-label="الشريحة التالية">
+            <span>التالي</span>
+            <i class="ti ti-chevron-left"></i>
+        </button>
+    </nav>
+
+    <!-- Touch hint for mobile -->
+    <div class="touch-hint" id="touchHint">
+        <i class="ti ti-hand-finger"></i>
+        <span>اسحب للتنقل بين الشرائح</span>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
